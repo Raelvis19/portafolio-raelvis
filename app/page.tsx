@@ -24,8 +24,10 @@ export default function Home() {
     <section className="hero" id="top">
       <div className="hero-copy">
         <p className="eyebrow"><span />{t?"Available for remote opportunities":"Disponible para oportunidades remotas"}</p>
-        <h1>{t?"I build digital":"Creo productos"}<br/><em>{t?"experiences":"digitales"}</em> {t?"that work.":"que funcionan."}</h1>
+        <h1 className="hero-title">Raelvis Francisco Paulino Almanzar</h1>
+        <p>________________________________________________________________________________________________________</p>
         <p className="intro">{t?"Junior Full-Stack Developer focused on thoughtful interfaces, solid code, and useful products. Based in the Dominican Republic.":"Desarrollador Full-Stack Junior enfocado en interfaces cuidadas, código sólido y productos útiles. Desde República Dominicana."}</p>
+        <h2 className="intro">{t?"I build digital":"Creo productos"}<br/><em>{t?"experiences":"digitales"}</em> {t?"that work.":"que funcionan."}</h2>
         <div className="hero-actions"><a className="button primary" href="#work">{t?"Explore my work":"Ver proyectos"}<span>↘</span></a><a className="text-link" href="https://github.com/Raelvis19" target="_blank" rel="noreferrer">GitHub ↗</a><a className="text-link" href="https://www.linkedin.com/in/raelvis-paulino-8447a42ba/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
       </div>
       <div className="hero-visual"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="portrait-frame"><Image src="/raelvis-paulino.png" alt="Raelvis Paulino, desarrollador Full-Stack Junior" fill priority sizes="(max-width: 850px) 88vw, 38vw" /></div><span className="portrait-label">Raelvis Paulino · 23</span><span className="floating-tag tag-react">React</span><span className="floating-tag tag-next">Next.js</span><span className="floating-tag tag-ts">TS</span></div>
