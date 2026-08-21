@@ -42,6 +42,7 @@ const personSchema = {
   image: `${siteUrl}/raelvis-paulino.png`,
   logo: `${siteUrl}/logo-rp.svg`,
   jobTitle: "Junior Full-Stack Developer",
+  email: "mailto:contact@raelvispaulino.dev",
   address: { "@type": "PostalAddress", addressLocality: "San Francisco de Macorís", addressCountry: "DO" },
   sameAs: ["https://github.com/Raelvis19", "https://www.linkedin.com/in/raelvis-paulino-8447a42ba/"],
 };

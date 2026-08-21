@@ -1,4 +1,5 @@
 @import "tailwindcss";
+.contact-address{display:block;width:max-content;margin-top:15px;font:700 11px var(--font-mono);border-bottom:1px solid currentColor;padding-bottom:3px}.contact-address:hover{color:#fff}
 .hero-divider{width:100%;max-width:610px;height:1px;margin:24px 0 0;border:0;background:rgba(17,24,32,.28)}@media(max-width:520px){.hero-copy .hero-title{max-width:100%;font-size:clamp(38px,12vw,50px);line-height:1;letter-spacing:-.055em;overflow-wrap:break-word}.hero-divider{margin-top:20px}}
 .hero-copy .hero-name{margin:0 0 18px;font:700 13px var(--font-mono);letter-spacing:.16em;line-height:1.2;text-transform:uppercase;color:var(--coral)}.hero-copy .hero-title{margin:0;font-size:clamp(54px,7.2vw,108px);line-height:.92;letter-spacing:-.075em;max-width:900px;color:var(--ink)}
 .about-grid .about-copy p{margin:0 0 22px;color:var(--ink)}.about-grid .about-copy p:last-child{margin-bottom:0;color:var(--ink)}
