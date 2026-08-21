@@ -1,69 +1,45 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
+const projects = [
+  { number:"01", title:"Ruticas RD", type:{en:"Travel discovery platform",es:"Plataforma de rutas turísticas"}, description:{en:"A full-stack experience for discovering routes and destinations across the Dominican Republic.",es:"Una experiencia full-stack para descubrir rutas y destinos de la República Dominicana."}, stack:["Next.js","TypeScript","Supabase","PostgreSQL"], tone:"coral", image:"/ruticas-rd-preview.png", liveUrl:"https://ruticasrd.com", githubUrl:"https://github.com/Raelvis19/RuticasRD", downloadUrl:null },
+  { number:"02", title:"Gestión Médica UCNE", type:{en:"Offline healthcare desktop system",es:"Sistema médico de escritorio offline"}, description:{en:"A desktop application for managing patients, medical records, inventory, priorities, and prescriptions at UCNE, with local data storage and offline operation.",es:"Una aplicación de escritorio para gestionar pacientes, historiales clínicos, inventario, prioridades y recetas en UCNE, con almacenamiento local y funcionamiento sin conexión."}, stack:["React 19","Electron","SQLite","Vite"], tone:"blue", image:"/gestion-medica-ucne-preview.png", liveUrl:"https://gestionmedicaucne.vercel.app/", githubUrl:"https://github.com/Raelvis19/CamargoYLuciano", downloadUrl:"https://ucne-enfermeria.uptodown.com/windows" },
+  { number:"03", title:"PickyRentCar", type:{en:"Car rental web application",es:"Aplicación web de alquiler de vehículos"}, description:{en:"A responsive car rental experience for exploring vehicles, checking availability, and starting a reservation through a clear, user-friendly flow.",es:"Una experiencia responsiva para explorar vehículos, consultar disponibilidad e iniciar una reserva mediante un flujo claro y fácil de utilizar."}, stack:["JavaScript","CSS","Responsive UI","Reservations"], tone:"lime", image:"/pickyrentcar-preview.png", liveUrl:"https://pickyrentcar-xojx.vercel.app/", githubUrl:"https://github.com/ProgramacionAplicada1/pickyrentcar", downloadUrl:null },
+];
+const skills = [
+  ["Frontend","React · Next.js · TypeScript · JavaScript · Tailwind CSS"],
+  ["Backend & Data","Supabase · PostgreSQL · C# · .NET"],
+  ["Also working with","Java · Python · Git · GitHub"],
+];
+
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  const [lang,setLang]=useState<"en"|"es">("en"); const t=lang==="en";
+  return <main>
+    <header className="site-header">
+      <a className="brand" href="#top" aria-label="Raelvis Paulino — Home">RP<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="#work">{t?"Work":"Proyectos"}</a><a href="#about">{t?"About":"Perfil"}</a><a href="#contact">{t?"Contact":"Contacto"}</a></nav>
+      <button className="language" onClick={()=>setLang(t?"es":"en")} aria-label="Change language">{t?"ES":"EN"}</button>
+    </header>
+    <section className="hero" id="top">
+      <div className="hero-copy">
+        <p className="eyebrow"><span />{t?"Available for remote opportunities":"Disponible para oportunidades remotas"}</p>
+        <h1>{t?"I build digital":"Creo productos"}<br/><em>{t?"experiences":"digitales"}</em> {t?"that work.":"que funcionan."}</h1>
+        <p className="intro">{t?"Junior Full-Stack Developer focused on thoughtful interfaces, solid code, and useful products. Based in the Dominican Republic.":"Desarrollador Full-Stack Junior enfocado en interfaces cuidadas, código sólido y productos útiles. Desde República Dominicana."}</p>
+        <div className="hero-actions"><a className="button primary" href="#work">{t?"Explore my work":"Ver proyectos"}<span>↘</span></a><a className="text-link" href="https://github.com/Raelvis19" target="_blank" rel="noreferrer">GitHub ↗</a><a className="text-link" href="https://www.linkedin.com/in/raelvis-paulino-8447a42ba/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+      </div>
+      <div className="hero-visual"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="portrait-frame"><Image src="/raelvis-paulino.png" alt="Raelvis Paulino, desarrollador Full-Stack Junior" fill priority sizes="(max-width: 850px) 88vw, 38vw" /></div><span className="portrait-label">Raelvis Paulino · 23</span><span className="floating-tag tag-react">React</span><span className="floating-tag tag-next">Next.js</span><span className="floating-tag tag-ts">TS</span></div>
+      <p className="scroll-note">{t?"Scroll to discover":"Desliza para descubrir"}<span>↓</span></p>
+    </section>
+    <section className="work section" id="work">
+      <div className="section-heading"><div><p className="section-number">01 / {t?"SELECTED WORK":"PROYECTOS"}</p><h2>{t?"Things I’ve built.":"Cosas que he creado."}</h2></div><p>{t?"A selection of academic and personal projects where I turn ideas into functional web experiences.":"Una selección de proyectos académicos y personales donde convierto ideas en experiencias web funcionales."}</p></div>
+      <div className="projects">{projects.map(p=><article className="project" key={p.title}><div className={`project-art ${p.tone}`}><span className="project-index">{p.number}</span>{p.image?<div className="project-screenshot"><Image src={p.image} alt={`${p.title} website preview`} fill sizes="(max-width: 850px) 90vw, 42vw" /></div>:<div className="mini-browser"><div className="browser-bar"><i/><i/><i/></div><div className="browser-content"><b>{p.title}</b><span/><span/><span/></div></div>}</div><div className="project-copy"><p className="project-type">{p.type[lang]}</p><h3>{p.title}</h3><p>{p.description[lang]}</p><div className="tags">{p.stack.map(s=><span key={s}>{s}</span>)}</div>{p.liveUrl&&p.githubUrl?<div className="project-links"><a href={p.liveUrl} target="_blank" rel="noreferrer">{t?"Visit website":"Visitar sitio"} ↗</a><a href={p.githubUrl} target="_blank" rel="noreferrer">GitHub ↗</a>{p.downloadUrl&&<a href={p.downloadUrl} target="_blank" rel="noreferrer">{t?"Download app":"Descargar app"} ↓</a>}</div>:<span className="project-status">{t?"Case study coming soon":"Caso de estudio próximamente"}</span>}</div></article>)}</div>
+    </section>
+    <section className="about section" id="about">
+      <div className="about-intro"><p className="section-number">02 / {t?"ABOUT ME":"SOBRE MÍ"}</p><h2>{t?"Learning fast. Building with purpose.":"Aprendiendo rápido. Creando con propósito."}</h2></div>
+      <div className="about-grid"><div className="about-copy"><p>{t?"My name is Raelvis Paulino. I’m 23 years old and from San Francisco de Macorís, Dominican Republic. I consider myself responsible, respectful, and eager to keep learning and growing both personally and professionally.":"Mi nombre es Raelvis Paulino. Tengo 23 años y soy de San Francisco de Macorís, República Dominicana. Me considero una persona responsable, respetuosa y con muchas ganas de seguir aprendiendo y creciendo tanto en lo personal como en lo profesional."}</p><p>{t?"I have been curious about technology and computers since childhood. That interest became a goal and led me to study Systems Engineering. Throughout my degree, I have gained knowledge in programming, databases, application development, and other areas of computer science. Every project is an opportunity to learn and improve.":"Desde pequeño he sentido curiosidad por la tecnología y las computadoras. Ese interés se convirtió en una meta y me llevó a estudiar Ingeniería en Sistemas. Durante mi carrera he adquirido conocimientos en programación, bases de datos, desarrollo de aplicaciones y otras áreas de la informática. Cada proyecto es una oportunidad para aprender y mejorar."}</p><p>{t?"In my free time, I enjoy exploring new technologies, practicing programming, and building projects that strengthen my skills. I also value time with family and friends, whose support has been fundamental in reaching my goals.":"En mi tiempo libre disfruto aprender sobre nuevas tecnologías, practicar programación y desarrollar proyectos que fortalezcan mis conocimientos. También valoro compartir con mi familia y amigos, cuyo apoyo ha sido fundamental para alcanzar mis objetivos."}</p><p>{t?"My goal is to become a capable software professional who creates innovative solutions through technology. I know that path requires perseverance, discipline, responsibility, and constant learning, and I’m ready to take on those challenges.":"Mi propósito es convertirme en un profesional competente, capaz de aportar soluciones innovadoras mediante la tecnología. Sé que ese camino requiere perseverancia, disciplina, responsabilidad y aprendizaje constante, y estoy dispuesto a enfrentar esos retos."}</p><p>{t?"I dream of completing my degree, gaining experience in software development, and continuing my education so I can grow professionally and contribute positively to society through my work.":"Mi sueño es culminar con éxito mi carrera, obtener experiencia en desarrollo de software y continuar capacitándome para crecer profesionalmente y contribuir positivamente a la sociedad a través de mi profesión."}</p></div><div className="skills">{skills.map(([label,list])=><div className="skill-row" key={label}><span>{label}</span><p>{list}</p></div>)}</div></div>
+      <div className="experience-strip"><div><span>NOW</span><strong>Systems Engineering</strong><p>UCNE · {t?"Student":"Estudiante"}</p></div><div><span>{t?"EXPERIENCE":"EXPERIENCIA"}</span><strong>{t?"Tech Support":"Soporte Tecnico"}</strong><p>Centro Medico Siglo 21</p></div><div><span>{t?"FOCUS":"ENFOQUE"}</span><strong>Frontend + Full-Stack</strong><p>{t?"Remote opportunities":"Oportunidades remotas"}</p></div></div>
+    </section>
+    <section className="contact section" id="contact"><p className="section-number">03 / {t?"LET’S CONNECT":"HABLEMOS"}</p><div className="contact-grid"><h2>{t?"Have a role or an idea?":"¿Tienes una vacante o una idea?"}<br/><em>{t?"Let’s talk.":"Hablemos."}</em></h2><div className="contact-copy"><p>{t?"I’m currently looking for a junior remote opportunity where I can contribute, learn, and grow with a great team.":"Actualmente busco una oportunidad junior remota donde pueda aportar, aprender y crecer junto a un gran equipo."}</p><a className="button light" href="mailto:your-email@example.com">{t?"Send me an email":"Envíame un correo"}<span>↗</span></a><small>{t?"Replace this temporary email before publishing.":"Reemplaza este correo temporal antes de publicar."}</small></div></div><footer><span>© {new Date().getFullYear()} Raelvis Paulino</span><span>{t?"Designed & built with care.":"Diseñado y creado con dedicación."}</span><a href="#top">{t?"Back to top":"Volver arriba"} ↑</a></footer></section>
+  </main>;
 }
