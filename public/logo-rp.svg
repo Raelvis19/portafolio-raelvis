@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">RP logo</title>
+  <desc id="description">Raelvis Paulino initials in white with a coral period on a dark background.</desc>
+  <rect width="512" height="512" rx="112" fill="#111820"/>
+  <text x="256" y="310" text-anchor="middle" fill="#f3f0e8" font-family="Arial, Helvetica, sans-serif" font-size="210" font-weight="800" letter-spacing="-22">RP</text>
+  <circle cx="427" cy="333" r="27" fill="#ff6b4a"/>
+</svg>

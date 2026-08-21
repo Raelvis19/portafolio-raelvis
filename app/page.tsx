@@ -25,7 +25,7 @@ export default function Home() {
       <div className="hero-copy">
         <p className="eyebrow"><span />{t?"Available for remote opportunities":"Disponible para oportunidades remotas"}</p>
         <h1 className="hero-title">Raelvis Francisco Paulino Almanzar</h1>
-        <p>________________________________________________________________________________________________________</p>
+        <p className="hero-divider" aria-hidden="true" />
         <p className="intro">{t?"Junior Full-Stack Developer focused on thoughtful interfaces, solid code, and useful products. Based in the Dominican Republic.":"Desarrollador Full-Stack Junior enfocado en interfaces cuidadas, código sólido y productos útiles. Desde República Dominicana."}</p>
         <h2 className="intro">{t?"I build digital":"Creo productos"}<br/><em>{t?"experiences":"digitales"}</em> {t?"that work.":"que funcionan."}</h2>
         <div className="hero-actions"><a className="button primary" href="#work">{t?"Explore my work":"Ver proyectos"}<span>↘</span></a><a className="text-link" href="https://github.com/Raelvis19" target="_blank" rel="noreferrer">GitHub ↗</a><a className="text-link" href="https://www.linkedin.com/in/raelvis-paulino-8447a42ba/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
